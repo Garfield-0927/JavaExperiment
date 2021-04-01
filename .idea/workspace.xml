@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="4213cc7e-886d-4d43-8cf7-3b6d0767e64d" name="Default Changelist" comment="" />
+    <list default="true" id="4213cc7e-886d-4d43-8cf7-3b6d0767e64d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hust/cs/javacourse/search/index/impl/DocumentBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/cs/javacourse/search/index/impl/DocumentBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hust/cs/javacourse/search/index/impl/PostingList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/cs/javacourse/search/index/impl/PostingList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hust/cs/javacourse/search/index/impl/TermTuple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/cs/javacourse/search/index/impl/TermTuple.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,14 +42,19 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1YDYqyNZghUwgeTFTl7oiXVcjAT" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -54,16 +83,37 @@
       <workItem from="1617274129975" duration="5322000" />
       <workItem from="1617281938692" duration="1879000" />
       <workItem from="1617285560076" duration="29000" />
+      <workItem from="1617286362038" duration="3089000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
-    <state x="555" y="176" key="#com.intellij.ide.util.MemberChooser" timestamp="1617283141885">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="925" y="299" key="#com.intellij.ide.util.MemberChooser" timestamp="1617288519938">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state x="925" y="299" key="#com.intellij.ide.util.MemberChooser/-1920.363.1536.832/0.0.2560.1400@0.0.2560.1400" timestamp="1617288519938" />
     <state x="555" y="176" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1617283141885" />
+    <state x="1149" y="609" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1617288442258">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1149" y="609" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/-1920.363.1536.832/0.0.2560.1400@0.0.2560.1400" timestamp="1617288442258" />
+    <state x="1010" y="338" width="597" height="804" key="find.popup" timestamp="1617286709022">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1010" y="338" width="597" height="804" key="find.popup/-1920.363.1536.832/0.0.2560.1400@0.0.2560.1400" timestamp="1617286709022" />
   </component>
 </project>
