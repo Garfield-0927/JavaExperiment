@@ -2,10 +2,8 @@ package hust.cs.javacourse.search.index.impl;
 
 import hust.cs.javacourse.search.index.*;
 
-import java.io.File;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.util.Set;
+import java.io.*;
+import java.util.*;
 
 /**
  * <pre>
@@ -18,6 +16,8 @@ import java.util.Set;
  * </pre>
  */
 public class Index extends AbstractIndex implements FileSerializable {
+
+
     /**
      * 返回索引的字符串表示
      *
@@ -25,7 +25,11 @@ public class Index extends AbstractIndex implements FileSerializable {
      */
     @Override
     public String toString() {
-        return null;
+        return "Index{" +
+                "docIdToDocPath={" + this.docIdToDocPathMapping.toString() +
+                "}, " +
+                "termToPostingList={" + this.termToPostingListMapping.toString() +
+                "}";
     }
 
     /**
@@ -35,7 +39,32 @@ public class Index extends AbstractIndex implements FileSerializable {
      */
     @Override
     public void addDocument(AbstractDocument document) {
+        this.docIdToDocPathMapping.put(document.getDocId(), document.getDocPath());
+        Map<AbstractTerm, Posting> map = new TreeMap<AbstractTerm, Posting>();
+        for (AbstractTermTuple tuple : document.getTuples()) {
+            if (!map.containsKey(tuple.term)) {
+                List<Integer> pos = new ArrayList<Integer>();
+                pos.add(tuple.curPos);
+                Posting posting = new Posting(document.getDocId(), 1, pos);
+                map.put(tuple.term, posting);
+            } else {
+                Posting p = map.get(tuple.term);
+                p.setFreq(p.getFreq()+1);
+                List<Integer> pos= p.getPositions();
+                pos.add(tuple.curPos);
+                p.setPositions(pos);
+            }
+        }
 
+        map.forEach((key, val)->{
+            if (this.termToPostingListMapping.containsKey(key)){
+                this.termToPostingListMapping.get(key).add(val);
+            } else {
+                AbstractPostingList pl = new PostingList();
+                pl.add(val);
+                this.termToPostingListMapping.put(key, pl);
+            }
+        });
     }
 
     /**
@@ -46,7 +75,12 @@ public class Index extends AbstractIndex implements FileSerializable {
      */
     @Override
     public void load(File file) {
-
+        try {
+            ObjectInputStream in = new ObjectInputStream(new FileInputStream(file));
+            this.readObject(in);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -57,7 +91,12 @@ public class Index extends AbstractIndex implements FileSerializable {
      */
     @Override
     public void save(File file) {
-
+        try{
+            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(file));
+            this.writeObject(out);
+        } catch (IOException err){
+            err.printStackTrace();
+        }
     }
 
     /**
@@ -68,7 +107,7 @@ public class Index extends AbstractIndex implements FileSerializable {
      */
     @Override
     public AbstractPostingList search(AbstractTerm term) {
-        return null;
+        return termToPostingListMapping.getOrDefault(term, null);
     }
 
     /**
@@ -78,7 +117,7 @@ public class Index extends AbstractIndex implements FileSerializable {
      */
     @Override
     public Set<AbstractTerm> getDictionary() {
-        return null;
+        return termToPostingListMapping.keySet();
     }
 
     /**
@@ -102,7 +141,7 @@ public class Index extends AbstractIndex implements FileSerializable {
      */
     @Override
     public String getDocName(int docId) {
-        return null;
+        return this.docIdToDocPathMapping.getOrDefault(docId, null);
     }
 
     /**
@@ -112,7 +151,12 @@ public class Index extends AbstractIndex implements FileSerializable {
      */
     @Override
     public void writeObject(ObjectOutputStream out) {
-
+        try {
+            out.writeObject(this.termToPostingListMapping);
+            out.writeObject(this.docIdToDocPathMapping);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -122,6 +166,13 @@ public class Index extends AbstractIndex implements FileSerializable {
      */
     @Override
     public void readObject(ObjectInputStream in) {
-
+        try {
+            this.termToPostingListMapping = (Map<AbstractTerm, AbstractPostingList>) in.readObject();
+            this.docIdToDocPathMapping = (Map<Integer, String>) in.readObject();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }
