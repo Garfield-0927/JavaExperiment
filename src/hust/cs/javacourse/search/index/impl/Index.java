@@ -1,18 +1,23 @@
 package hust.cs.javacourse.search.index.impl;
 
-import hust.cs.javacourse.search.index.AbstractDocument;
-import hust.cs.javacourse.search.index.AbstractIndex;
-import hust.cs.javacourse.search.index.AbstractPostingList;
-import hust.cs.javacourse.search.index.AbstractTerm;
+import hust.cs.javacourse.search.index.*;
+
 import java.io.File;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Set;
 
 /**
- * AbstractIndex的具体实现类
+ * <pre>
+ * Index是内存中的倒排索引对象的类.
+ *      一个倒排索引对象包含了一个文档集合的倒排索引.
+ *      内存中的倒排索引结构为HashMap，key为Term对象，value为对应的PostingList对象.
+ *      另外在AbstractIndex里还定义了从docId和docPath之间的映射关系.
+ *      必须实现下面接口:
+ *          FileSerializable：可序列化到文件或从文件反序列化.
+ * </pre>
  */
-public class Index extends AbstractIndex {
+public class Index extends AbstractIndex implements FileSerializable {
     /**
      * 返回索引的字符串表示
      *
