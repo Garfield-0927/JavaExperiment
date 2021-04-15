@@ -49,15 +49,15 @@ public class Index extends AbstractIndex implements FileSerializable {
                 map.put(tuple.term, posting);
             } else {
                 Posting p = map.get(tuple.term);
-                p.setFreq(p.getFreq()+1);
-                List<Integer> pos= p.getPositions();
+                p.setFreq(p.getFreq() + 1);
+                List<Integer> pos = p.getPositions();
                 pos.add(tuple.curPos);
                 p.setPositions(pos);
             }
         }
 
-        map.forEach((key, val)->{
-            if (this.termToPostingListMapping.containsKey(key)){
+        map.forEach((key, val) -> {
+            if (this.termToPostingListMapping.containsKey(key)) {
                 this.termToPostingListMapping.get(key).add(val);
             } else {
                 AbstractPostingList pl = new PostingList();
@@ -91,10 +91,10 @@ public class Index extends AbstractIndex implements FileSerializable {
      */
     @Override
     public void save(File file) {
-        try{
+        try {
             ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(file));
             this.writeObject(out);
-        } catch (IOException err){
+        } catch (IOException err) {
             err.printStackTrace();
         }
     }
@@ -107,6 +107,7 @@ public class Index extends AbstractIndex implements FileSerializable {
      */
     @Override
     public AbstractPostingList search(AbstractTerm term) {
+
         return termToPostingListMapping.getOrDefault(term, null);
     }
 
@@ -130,7 +131,12 @@ public class Index extends AbstractIndex implements FileSerializable {
      */
     @Override
     public void optimize() {
-
+        for (AbstractPostingList list : this.termToPostingListMapping.values()) {
+            list.sort();
+            for (int i = 0; i < list.size(); i++) {
+                list.get(i).sort();
+            }
+        }
     }
 
     /**

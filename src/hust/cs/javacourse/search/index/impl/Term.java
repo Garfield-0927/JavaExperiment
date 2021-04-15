@@ -19,8 +19,8 @@ public class Term extends AbstractTerm implements Comparable<AbstractTerm>, File
     /**
      * 缺省构造函数
      */
-    public Term() {
-
+    public Term(String content) {
+        this.content = content;
     }
 
     /**

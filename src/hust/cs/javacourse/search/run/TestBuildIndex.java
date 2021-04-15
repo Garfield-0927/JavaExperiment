@@ -1,16 +1,13 @@
 package hust.cs.javacourse.search.run;
 
-import hust.cs.javacourse.search.index.AbstractDocumentBuilder;
-import hust.cs.javacourse.search.index.AbstractIndex;
-import hust.cs.javacourse.search.index.AbstractIndexBuilder;
-import hust.cs.javacourse.search.index.impl.Posting;
+import hust.cs.javacourse.search.parse.AbstractTermTupleStream;
+import hust.cs.javacourse.search.parse.impl.LengthFilter;
+import hust.cs.javacourse.search.parse.impl.PatternFilter;
+import hust.cs.javacourse.search.parse.impl.StopWordsFilter;
+import hust.cs.javacourse.search.parse.impl.TermTupleScanner;
 import hust.cs.javacourse.search.util.Config;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+import java.io.*;
 
 /**
  * 测试索引构建
@@ -21,11 +18,17 @@ public class TestBuildIndex {
      * @param args : 命令行参数
      */
     public static void main(String[] args){
-        Map<Integer, String> doc = new TreeMap<>();
-        doc.put(1,"abc");
-        doc.put(2,"bbb");
-        doc.put(3,"ccc");
-        System.out.println(doc.toString());
+
+        try {
+            BufferedReader reader = new BufferedReader(
+                    new InputStreamReader(new FileInputStream(new File(Config.DOC_DIR + "1.txt")))
+            );
+            AbstractTermTupleStream stream = new StopWordsFilter(new LengthFilter(new PatternFilter(new TermTupleScanner(reader))));
+            System.out.println(stream.next());
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
 
     }
 }
