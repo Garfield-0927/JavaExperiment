@@ -17,23 +17,19 @@ import java.io.*;
  */
 public class TestBuildIndex {
     /**
-     *  索引构建程序入口
+     * 索引构建程序入口
+     *
      * @param args : 命令行参数
      */
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
-        try {
-            BufferedReader reader = new BufferedReader(
-                    new InputStreamReader(new FileInputStream(new File(Config.DOC_DIR + "1.txt")))
-            );
-            DocumentBuilder docBuilder = new DocumentBuilder();
-            IndexBuilder indexBuilder = new IndexBuilder(docBuilder);
-            String rootDirectory = Config.DOC_DIR;
-            AbstractIndex index = indexBuilder.buildIndex(rootDirectory);
-            System.out.println(index);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+
+        DocumentBuilder docBuilder = new DocumentBuilder();
+        IndexBuilder indexBuilder = new IndexBuilder(docBuilder);
+        String rootDirectory = Config.DOC_DIR;
+        AbstractIndex index = indexBuilder.buildIndex(rootDirectory);
+        index.optimize();
+        System.out.println(index);
 
 
     }
