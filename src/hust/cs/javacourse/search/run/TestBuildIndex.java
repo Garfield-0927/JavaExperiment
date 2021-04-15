@@ -1,5 +1,8 @@
 package hust.cs.javacourse.search.run;
 
+import hust.cs.javacourse.search.index.AbstractIndex;
+import hust.cs.javacourse.search.index.impl.DocumentBuilder;
+import hust.cs.javacourse.search.index.impl.IndexBuilder;
 import hust.cs.javacourse.search.parse.AbstractTermTupleStream;
 import hust.cs.javacourse.search.parse.impl.LengthFilter;
 import hust.cs.javacourse.search.parse.impl.PatternFilter;
@@ -23,8 +26,11 @@ public class TestBuildIndex {
             BufferedReader reader = new BufferedReader(
                     new InputStreamReader(new FileInputStream(new File(Config.DOC_DIR + "1.txt")))
             );
-            AbstractTermTupleStream stream = new StopWordsFilter(new LengthFilter(new PatternFilter(new TermTupleScanner(reader))));
-            System.out.println(stream.next());
+            DocumentBuilder docBuilder = new DocumentBuilder();
+            IndexBuilder indexBuilder = new IndexBuilder(docBuilder);
+            String rootDirectory = Config.DOC_DIR;
+            AbstractIndex index = indexBuilder.buildIndex(rootDirectory);
+            System.out.println(index);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

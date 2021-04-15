@@ -30,9 +30,6 @@ public class IndexBuilder extends AbstractIndexBuilder {
             AbstractDocument doc = this.docBuilder.build(++docId, path, new File(path));
             index.addDocument(doc);
         }
-        File file = new File(Config.INDEX_DIR + "index.dat");
-
-
         return index;
     }
 }

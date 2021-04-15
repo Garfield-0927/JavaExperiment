@@ -25,10 +25,16 @@ public class Index extends AbstractIndex implements FileSerializable {
      */
     @Override
     public String toString() {
-        return "Index{" +
-                "docIdToDocPath={" + this.docIdToDocPathMapping.toString() +
-                "}, " +
-                "termToPostingList={" + this.termToPostingListMapping.toString() +
+        termToPostingListMapping.forEach((key,value)->{
+            System.out.println(key.toString()+": "+value.toString());
+        });
+        docIdToDocPathMapping.forEach((key,value)->{
+            System.out.println(key.toString()+": "+value.toString());
+        });
+        return "Index{\n" +
+                "docIdToDocPath={\n" + this.docIdToDocPathMapping.toString() +
+                "}, \n" +
+                "termToPostingList={\n" + this.termToPostingListMapping.toString() +
                 "}";
     }
 
