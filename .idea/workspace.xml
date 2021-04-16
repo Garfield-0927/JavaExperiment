@@ -20,32 +20,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4213cc7e-886d-4d43-8cf7-3b6d0767e64d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/text/10.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/text/11.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/text/12.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/text/13.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/text/14.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/text/15.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/text/4.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/text/5.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/text/6.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/text/7.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/text/8.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/text/9.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/production/SearchEngineForStudent/hust/cs/javacourse/search/index/impl/IndexBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/SearchEngineForStudent/hust/cs/javacourse/search/index/impl/IndexBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/SearchEngineForStudent/hust/cs/javacourse/search/query/AbstractIndexSearcher$LogicalCombination.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/SearchEngineForStudent/hust/cs/javacourse/search/query/AbstractIndexSearcher$LogicalCombination.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/production/SearchEngineForStudent/hust/cs/javacourse/search/query/AbstractIndexSearcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/SearchEngineForStudent/hust/cs/javacourse/search/query/AbstractIndexSearcher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/production/SearchEngineForStudent/hust/cs/javacourse/search/run/TestBuildIndex.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/SearchEngineForStudent/hust/cs/javacourse/search/run/TestBuildIndex.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/SearchEngineForStudent/hust/cs/javacourse/search/query/impl/IndexSearcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/SearchEngineForStudent/hust/cs/javacourse/search/query/impl/IndexSearcher.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/production/SearchEngineForStudent/hust/cs/javacourse/search/run/TestSearchIndex.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/SearchEngineForStudent/hust/cs/javacourse/search/run/TestSearchIndex.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hust/cs/javacourse/search/index/impl/IndexBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/cs/javacourse/search/index/impl/IndexBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/SearchEngineForStudent/hust/cs/javacourse/search/util/FileUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/SearchEngineForStudent/hust/cs/javacourse/search/util/FileUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index/index.dat" beforeDir="false" afterPath="$PROJECT_DIR$/index/index.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hust/cs/javacourse/search/query/AbstractIndexSearcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/cs/javacourse/search/query/AbstractIndexSearcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hust/cs/javacourse/search/query/impl/Hit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/cs/javacourse/search/query/impl/Hit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hust/cs/javacourse/search/query/impl/IndexSearcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/cs/javacourse/search/query/impl/IndexSearcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hust/cs/javacourse/search/run/TestBuildIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/cs/javacourse/search/run/TestBuildIndex.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hust/cs/javacourse/search/run/TestSearchIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/cs/javacourse/search/run/TestSearchIndex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hust/cs/javacourse/search/util/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/cs/javacourse/search/util/FileUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/text/1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/text/1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/text/10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/text/11.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/text/12.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/text/13.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/text/14.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/text/15.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/text/2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/text/2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/text/3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/text/3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/text/4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/text/5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/text/6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/text/7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/text/8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/text/9.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +77,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -182,7 +183,7 @@
       <workItem from="1617878518351" duration="8717000" />
       <workItem from="1617889986734" duration="2345000" />
       <workItem from="1618474596943" duration="15128000" />
-      <workItem from="1618533518221" duration="2899000" />
+      <workItem from="1618533518221" duration="12949000" />
     </task>
     <servers />
   </component>
@@ -200,6 +201,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

@@ -15,7 +15,7 @@ public abstract class AbstractIndexSearcher {
      */
     //Index是AbstractIndex的具体实现类，在hust.cs.javacourse.search.index.impl里定义，但没有实现任何覆盖方法，需要学生实现
     //如果学生AbstractIndex的具体实现类类名不是Index，这里需要相应修改
-    public AbstractIndex index = new Index();
+    protected AbstractIndex index = new Index();
     /**
      * 多个检索词的逻辑组合
      */
@@ -23,7 +23,7 @@ public abstract class AbstractIndexSearcher {
         /**
          * 与,即多个检索词必须都在命中文档里出现
          */
-        ADN,
+        AND,
         /**
          * 或, 即任意一个检索词在命中文档里出现
          */

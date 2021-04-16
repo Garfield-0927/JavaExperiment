@@ -29,8 +29,7 @@ public class FileUtil {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        }
-        finally {
+        } finally {
             if(reader != null) {
                 try {
                     reader.close();
@@ -54,8 +53,7 @@ public class FileUtil {
             writer.print(content);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-        }
-        finally {
+        } finally {
             if(writer != null){
                 writer.close();
             }
