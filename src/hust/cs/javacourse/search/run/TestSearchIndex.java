@@ -26,17 +26,21 @@ public class TestSearchIndex {
         searcher.open(Config.INDEX_DIR + "index.dat");
         AbstractTerm queryTerm1 = new Term("Activity".toLowerCase());
         AbstractTerm queryTerm2 = new Term("coronavirus".toLowerCase());
-
-        AbstractHit[] hits = searcher.search(queryTerm1, queryTerm2, new Sort(), AbstractIndexSearcher.LogicalCombination.OR);
-        System.out.println("======================================");
-        if (hits.length != 0) {
-            for (AbstractHit hit : hits) {
-                System.out.println(hit.getContent());
-                System.out.println("======================================");
-            }
-        } else {
-            System.out.println("Not Found");
+        AbstractHit[] hits = searcher.search(queryTerm2, new Sort());
+        for (AbstractHit hit:hits
+             ) {
+            System.out.println(hit.getTermPostingMapping());
         }
+//        AbstractHit[] hits = searcher.search(queryTerm1, queryTerm2, new Sort(), AbstractIndexSearcher.LogicalCombination.OR);
+//        System.out.println("======================================");
+//        if (hits.length != 0) {
+//            for (AbstractHit hit : hits) {
+//                System.out.println(hit.getContent());
+//                System.out.println("======================================");
+//            }
+//        } else {
+//            System.out.println("Not Found");
+//        }
 
     }
 }

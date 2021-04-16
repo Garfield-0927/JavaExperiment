@@ -56,7 +56,7 @@ public class Config {
      * 例如正则表达式指定只保留由字母组成的term,其他的term全部过滤掉,不写入倒排索引
      * </pre>
      */
-    public static String TERM_FILTER_PATTERN = "[a-zA-z]+";
+    public static String TERM_FILTER_PATTERN = "[a-zA-Z]+";
 
     /**
      * <pre>
