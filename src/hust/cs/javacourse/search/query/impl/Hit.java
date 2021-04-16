@@ -52,7 +52,7 @@ public class Hit extends AbstractHit {
 
     @Override
     public Map<AbstractTerm, AbstractPosting> getTermPostingMapping() {
-        return null;
+        return this.termPostingMapping;
     }
 
 
