@@ -5,6 +5,7 @@ import hust.cs.javacourse.search.index.AbstractTerm;
 import hust.cs.javacourse.search.query.AbstractHit;
 
 import java.util.Map;
+
 // TODO
 public class Hit extends AbstractHit {
 
@@ -69,6 +70,11 @@ public class Hit extends AbstractHit {
 
     @Override
     public int compareTo(AbstractHit o) {
-        return 0;
+        double diff = -this.getScore() + o.getScore();
+        if (diff != 0) {
+            return (int) diff;
+        } else {
+            return this.getDocId() - o.getDocId();
+        }
     }
 }

@@ -6,11 +6,6 @@ import hust.cs.javacourse.search.index.AbstractIndexBuilder;
 import hust.cs.javacourse.search.index.impl.DocumentBuilder;
 import hust.cs.javacourse.search.index.impl.Index;
 import hust.cs.javacourse.search.index.impl.IndexBuilder;
-import hust.cs.javacourse.search.parse.AbstractTermTupleStream;
-import hust.cs.javacourse.search.parse.impl.LengthFilter;
-import hust.cs.javacourse.search.parse.impl.PatternFilter;
-import hust.cs.javacourse.search.parse.impl.StopWordsFilter;
-import hust.cs.javacourse.search.parse.impl.TermTupleScanner;
 import hust.cs.javacourse.search.util.Config;
 
 import java.io.*;

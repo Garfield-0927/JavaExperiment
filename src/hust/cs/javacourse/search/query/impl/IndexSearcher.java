@@ -13,10 +13,7 @@ import hust.cs.javacourse.search.util.Config;
 
 import java.io.File;
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 // TODO
 public class IndexSearcher extends AbstractIndexSearcher {
@@ -35,15 +32,27 @@ public class IndexSearcher extends AbstractIndexSearcher {
     @Override
     public AbstractHit[] search(AbstractTerm queryTerm, Sort sorter) {
         AbstractPostingList plist = this.index.search(queryTerm);
-        Map<AbstractTerm, AbstractPosting> termPostingMapping = new HashMap<>();
-        AbstractHit[] hits = new AbstractHit[plist.size()];
-        for (int i = 0; i < plist.size(); i++) {
-            AbstractPosting posting = plist.get(i);
-            termPostingMapping.put(queryTerm, posting);
-            hits[i] = new Hit(posting.getDocId(), this.index.getDocName(posting.getDocId()), termPostingMapping);       // 这里传文件名即可，不然会找不到文件，详情参见fileUtil中的read方法
-            termPostingMapping.clear();
+        if (plist != null) {
+            Map<AbstractTerm, AbstractPosting> termPostingMapping = new HashMap<>();
+            AbstractHit[] hits = new AbstractHit[plist.size()];
+            for (int i = 0; i < plist.size(); i++) {
+                AbstractPosting posting = plist.get(i);
+                termPostingMapping.put(queryTerm, posting);
+                hits[i] = new Hit(posting.getDocId(), this.index.getDocName(posting.getDocId()), termPostingMapping);       // 这里传文件名即可，不然会找不到文件，详情参见fileUtil中的read方法
+                hits[i].setScore(sorter.score(hits[i]));
+                termPostingMapping.clear();
+            }
+            System.out.println("Before sort");
+            for (AbstractHit hit : hits) {
+                System.out.println(hit.getDocId() + ":" + hit.getScore());
+            }
+            System.out.println("After sort");
+            sorter.sort(Arrays.asList(hits));
+            return hits;
+        } else {
+            return null;
         }
-        return hits;
+
     }
 
     @Override
@@ -59,20 +68,28 @@ public class IndexSearcher extends AbstractIndexSearcher {
                         AbstractPosting posting = plist1.get(i);
                         termPostingMapping.put(queryTerm1, posting);
                         hits.add(new Hit(posting.getDocId(), this.index.getDocName(posting.getDocId()), termPostingMapping));     // 这里传文件名即可，不然会找不到文件，详情参见fileUtil中的read方法
+                        hits.get(i).setScore(sorter.score(hits.get(i)));
+
                         termPostingMapping.clear();
                     }
                 }
                 if (plist2 != null) {
                     for (int i = 0; i < plist2.size(); i++) {
+                        int[] flag = new int[1];
+                        flag[0] = 0;
                         AbstractPosting posting = plist2.get(i);
                         hits.forEach(item -> {
                             if (item.getDocId() == posting.getDocId()) {
                                 item.getTermPostingMapping().put(queryTerm2, posting);
                             }
+                            flag[0] = 1;
                         });
-                        termPostingMapping.put(queryTerm2, posting);
-                        hits.add(new Hit(posting.getDocId(), this.index.getDocName(posting.getDocId()), termPostingMapping));
-                        termPostingMapping.clear();
+                        if (flag[0] == 0) {
+                            termPostingMapping.put(queryTerm2, posting);
+                            hits.add(new Hit(posting.getDocId(), this.index.getDocName(posting.getDocId()), termPostingMapping));
+                            hits.get(i).setScore(sorter.score(hits.get(i)));
+                            termPostingMapping.clear();
+                        }
                     }
                 }
                 break;
@@ -86,6 +103,7 @@ public class IndexSearcher extends AbstractIndexSearcher {
                                 termPostingMapping.put(queryTerm1, posting);
                                 termPostingMapping.put(queryTerm2, posting1);
                                 hits.add(new Hit(posting.getDocId(), this.index.getDocName(posting.getDocId()), termPostingMapping));
+                                hits.get(i).setScore(sorter.score(hits.get(i)));
                                 termPostingMapping.clear();
                             }
                         }
@@ -94,6 +112,7 @@ public class IndexSearcher extends AbstractIndexSearcher {
                 break;
         }
 
+        sorter.sort(hits);
         return hits.toArray(new AbstractHit[hits.size()]);
     }
 }

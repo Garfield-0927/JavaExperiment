@@ -4,16 +4,12 @@ import hust.cs.javacourse.search.index.AbstractDocument;
 import hust.cs.javacourse.search.index.AbstractDocumentBuilder;
 import hust.cs.javacourse.search.index.AbstractTermTuple;
 import hust.cs.javacourse.search.parse.AbstractTermTupleStream;
-import hust.cs.javacourse.search.parse.impl.LengthFilter;
-import hust.cs.javacourse.search.parse.impl.PatternFilter;
-import hust.cs.javacourse.search.parse.impl.StopWordsFilter;
+import hust.cs.javacourse.search.parse.impl.LengthTermTupleFilter;
+import hust.cs.javacourse.search.parse.impl.PatternTermTupleFilter;
+import hust.cs.javacourse.search.parse.impl.StopWordTermTupleFilter;
 import hust.cs.javacourse.search.parse.impl.TermTupleScanner;
-import hust.cs.javacourse.search.util.Config;
 
-import javax.print.Doc;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * <pre>
@@ -59,7 +55,7 @@ public class DocumentBuilder extends AbstractDocumentBuilder {
         AbstractDocument doc = null;
         try {
             BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
-            AbstractTermTupleStream stream = new StopWordsFilter(new LengthFilter(new PatternFilter(new TermTupleScanner(reader))));
+            AbstractTermTupleStream stream = new StopWordTermTupleFilter(new LengthTermTupleFilter(new PatternTermTupleFilter(new TermTupleScanner(reader))));
             doc = this.build(docId, docPath, stream);
         } catch (IOException err){
             System.out.println(err);

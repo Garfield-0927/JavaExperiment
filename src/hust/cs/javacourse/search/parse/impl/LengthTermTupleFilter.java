@@ -5,19 +5,18 @@ import hust.cs.javacourse.search.parse.AbstractTermTupleFilter;
 import hust.cs.javacourse.search.parse.AbstractTermTupleStream;
 import hust.cs.javacourse.search.util.Config;
 
-public class PatternFilter extends AbstractTermTupleFilter {
-
-    public PatternFilter(AbstractTermTupleStream input) {
+public class LengthTermTupleFilter extends AbstractTermTupleFilter {
+    public LengthTermTupleFilter(AbstractTermTupleStream input) {
         super(input);
     }
 
     @Override
     public AbstractTermTuple next() {
         AbstractTermTuple tuple = input.next();
-        if (tuple == null) return null;
-        while (!tuple.term.getContent().matches(Config.TERM_FILTER_PATTERN)) {
+        if (tuple==null) return null;
+        while (tuple.term.getContent().length() > Config.TERM_FILTER_MAXLENGTH || tuple.term.getContent().length()<Config.TERM_FILTER_MINLENGTH){
             tuple = input.next();
-            if (tuple == null) return null;
+            if (tuple==null) return null;
         }
         return tuple;
     }

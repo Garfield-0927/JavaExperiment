@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class StopWordsFilter extends AbstractTermTupleFilter {
+public class StopWordTermTupleFilter extends AbstractTermTupleFilter {
 
     private List<String> stopWord;
 
@@ -18,7 +18,7 @@ public class StopWordsFilter extends AbstractTermTupleFilter {
      *
      * @param input : 输入流
      */
-    public StopWordsFilter(AbstractTermTupleStream input) {
+    public StopWordTermTupleFilter(AbstractTermTupleStream input) {
         super(input);
         this.stopWord = new ArrayList<String>(Arrays.asList(StopWords.STOP_WORDS));
     }

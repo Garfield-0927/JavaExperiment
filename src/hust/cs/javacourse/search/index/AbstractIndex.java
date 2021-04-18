@@ -15,27 +15,28 @@ import java.util.TreeMap;
  *          FileSerializable：可序列化到文件或从文件反序列化.
  * </pre>
  */
-public abstract class AbstractIndex implements FileSerializable{
+public abstract class AbstractIndex implements FileSerializable {
     /**
      * 内存中的docId和docPath的映射关系, key为docId，value为对应的docPath.
-     *      TreeMap可以对键值排序
+     * TreeMap可以对键值排序
      */
-    protected Map<Integer, String> docIdToDocPathMapping = new TreeMap<>();
+    public Map<Integer, String> docIdToDocPathMapping = new TreeMap<>();
 
     /**
      * 内存中的倒排索引结构为HashMap，key为Term对象，value为对应的PostingList对象.
      */
-    protected  Map<AbstractTerm, AbstractPostingList> termToPostingListMapping = new TreeMap<AbstractTerm, AbstractPostingList>();
+    public Map<AbstractTerm, AbstractPostingList> termToPostingListMapping = new TreeMap<AbstractTerm, AbstractPostingList>();
 
     /**
-     *  缺省构造函数,构建空的索引
+     * 缺省构造函数,构建空的索引
      */
-    public AbstractIndex(){
+    public AbstractIndex() {
 
     }
 
     /**
      * 返回索引的字符串表示
+     *
      * @return 索引的字符串表示
      */
     @Override
@@ -43,6 +44,7 @@ public abstract class AbstractIndex implements FileSerializable{
 
     /**
      * 添加文档到索引，更新索引内部的HashMap
+     *
      * @param document ：文档的AbstractDocument子类型表示
      */
     public abstract void addDocument(AbstractDocument document);
@@ -65,6 +67,7 @@ public abstract class AbstractIndex implements FileSerializable{
 
     /**
      * 返回指定单词的PostingList
+     *
      * @param term : 指定的单词
      * @return ：指定单词的PostingList;如果索引字典没有该单词，则返回null
      */
@@ -72,6 +75,7 @@ public abstract class AbstractIndex implements FileSerializable{
 
     /**
      * 返回索引的字典.字典为索引里所有单词的并集
+     *
      * @return ：索引中Term列表
      */
     public abstract Set<AbstractTerm> getDictionary();
@@ -88,6 +92,7 @@ public abstract class AbstractIndex implements FileSerializable{
 
     /**
      * 根据docId获得对应文档的完全路径名
+     *
      * @param docId ：文档id
      * @return : 对应文档的完全路径名
      */

@@ -1,18 +1,17 @@
 package hust.cs.javacourse.search.query.impl;
 
-import hust.cs.javacourse.search.index.AbstractPosting;
-import hust.cs.javacourse.search.index.AbstractTerm;
-import hust.cs.javacourse.search.index.impl.Term;
-import hust.cs.javacourse.search.query.AbstractHit;
 
+import hust.cs.javacourse.search.index.AbstractTerm;
+import hust.cs.javacourse.search.query.AbstractHit;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-public class Sort implements hust.cs.javacourse.search.query.Sort {
+public class SimpleSorter implements hust.cs.javacourse.search.query.Sort {
     @Override
     public void sort(List<AbstractHit> hits) {
-
+        Collections.sort(hits);
     }
 
     @Override
