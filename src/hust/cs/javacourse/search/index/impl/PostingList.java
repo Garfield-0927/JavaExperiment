@@ -38,7 +38,7 @@ public class PostingList extends AbstractPostingList implements FileSerializable
      */
     @Override
     public void add(AbstractPosting posting) {
-        if (!this.list.contains(posting)) {
+        if (!this.contains(posting)) {
             this.list.add(posting);
         }
     }
@@ -103,7 +103,12 @@ public class PostingList extends AbstractPostingList implements FileSerializable
      */
     @Override
     public boolean contains(AbstractPosting posting) {
-        return this.list.contains(posting);
+        for (int i = 0; i < this.list.size(); i++) {
+            if (this.list.get(i).getDocId()==posting.getDocId()){
+                return true;
+            }
+        }
+        return false;
     }
 
     /**

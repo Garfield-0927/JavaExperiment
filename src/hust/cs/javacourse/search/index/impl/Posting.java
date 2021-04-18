@@ -42,6 +42,7 @@ public class Posting extends AbstractPosting implements Comparable<AbstractPosti
         this.docId = docId;
         this.freq = freq;
         this.positions = positions;
+        this.sort();
     }
 
     /**
