@@ -105,7 +105,7 @@ public class PostingList extends AbstractPostingList implements FileSerializable
     public boolean contains(AbstractPosting posting) {
         for (int i = 0; i < this.list.size(); i++) {
             if (this.list.get(i).getDocId()==posting.getDocId()){
-                return true;
+                return this.list.get(i).equals(posting);
             }
         }
         return false;

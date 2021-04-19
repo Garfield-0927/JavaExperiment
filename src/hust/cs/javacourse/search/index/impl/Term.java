@@ -44,9 +44,7 @@ public class Term extends AbstractTerm implements Comparable<AbstractTerm>, File
      */
     @Override
     public String toString() {
-        return "Term{" +
-                "content='" + content + '\'' +
-                '}';
+        return this.content;
     }
 
     /**
@@ -87,7 +85,7 @@ public class Term extends AbstractTerm implements Comparable<AbstractTerm>, File
     @Override
     public void writeObject(ObjectOutputStream out) {
         try {
-            out.writeObject(this.content);
+            out.writeUTF(this.content);
         } catch (IOException err) {
             err.printStackTrace();
         }
@@ -101,8 +99,8 @@ public class Term extends AbstractTerm implements Comparable<AbstractTerm>, File
     @Override
     public void readObject(ObjectInputStream in) {
         try {
-            this.content = (String)(in.readObject());
-        } catch (IOException | ClassNotFoundException err) {
+            this.content = in.readUTF();
+        } catch (IOException err) {
             err.printStackTrace();
         }
     }

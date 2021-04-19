@@ -56,7 +56,7 @@ public class Posting extends AbstractPosting implements Comparable<AbstractPosti
         if (obj instanceof Posting) {
             return ((Posting) obj).docId == this.docId
                     && ((Posting) obj).freq == this.freq
-                    && ((Posting) obj).positions == this.positions;
+                    && ((Posting) obj).positions.equals(this.positions);
         }
         return false;
     }

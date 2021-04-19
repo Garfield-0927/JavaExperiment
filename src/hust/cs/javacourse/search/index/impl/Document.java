@@ -17,27 +17,17 @@ import java.util.List;
 public class Document extends AbstractDocument {
 
     /**
-     * 缺省构造函数
-     */
-    public Document() {
-
-    }
-
-    /**
      * 构造函数
      *
      * @param docId：文档id
      * @param docPath：文档绝对路径
      */
     public Document(int docId, String docPath) {
-        this.docId = docId;
-        this.docPath = docPath;
+        super(docId, docPath);
     }
 
     public Document(int docId, String docPath, List<AbstractTermTuple> tuples) {
-        this.docId = docId;
-        this.docPath = docPath;
-        this.tuples = tuples;
+        super(docId, docPath, tuples);
     }
 
     /**

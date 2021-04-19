@@ -25,12 +25,6 @@ public class Index extends AbstractIndex implements FileSerializable {
      */
     @Override
     public String toString() {
-        termToPostingListMapping.forEach((key,value)->{
-            System.out.println(key.toString()+": "+value.toString());
-        });
-        docIdToDocPathMapping.forEach((key,value)->{
-            System.out.println(key.toString()+": "+value.toString());
-        });
         return "Index{\n" +
                 "docIdToDocPath={\n" + this.docIdToDocPathMapping.toString() +
                 "}, \n" +
@@ -113,8 +107,7 @@ public class Index extends AbstractIndex implements FileSerializable {
      */
     @Override
     public AbstractPostingList search(AbstractTerm term) {
-
-        return termToPostingListMapping.getOrDefault(term, null);
+        return termToPostingListMapping.get(term);
     }
 
     /**
@@ -153,7 +146,7 @@ public class Index extends AbstractIndex implements FileSerializable {
      */
     @Override
     public String getDocName(int docId) {
-        return this.docIdToDocPathMapping.getOrDefault(docId, null);
+        return this.docIdToDocPathMapping.get(docId);
     }
 
     /**

@@ -10,6 +10,7 @@ import hust.cs.javacourse.search.util.FileUtil;
 import java.io.File;
 
 public class IndexBuilder extends AbstractIndexBuilder {
+    private int docNum =0;
     public IndexBuilder(AbstractDocumentBuilder docBuilder) {
         super(docBuilder);
     }
@@ -27,7 +28,7 @@ public class IndexBuilder extends AbstractIndexBuilder {
     public AbstractIndex buildIndex(String rootDirectory) {
         AbstractIndex index = new Index();
         for (String path : FileUtil.list(rootDirectory)) {
-            AbstractDocument doc = this.docBuilder.build(++docId, path, new File(path));
+            AbstractDocument doc = this.docBuilder.build(++docNum, path, new File(path));
             index.addDocument(doc);
         }
         index.save(new File(Config.INDEX_DIR+"index.dat"));

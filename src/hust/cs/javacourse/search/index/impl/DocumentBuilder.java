@@ -30,13 +30,12 @@ public class DocumentBuilder extends AbstractDocumentBuilder {
      */
     @Override
     public AbstractDocument build(int docId, String docPath, AbstractTermTupleStream termTupleStream) {
-        Document doc = new Document(docId, docPath);
+        AbstractDocument doc = new Document(docId, docPath);
         AbstractTermTuple tup = termTupleStream.next();
         while(tup!=null){
             doc.addTuple(tup);
             tup = termTupleStream.next();
         }
-        termTupleStream.close();
         return doc;
     }
     /**
@@ -57,8 +56,8 @@ public class DocumentBuilder extends AbstractDocumentBuilder {
             BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
             AbstractTermTupleStream stream = new StopWordTermTupleFilter(new LengthTermTupleFilter(new PatternTermTupleFilter(new TermTupleScanner(reader))));
             doc = this.build(docId, docPath, stream);
-        } catch (IOException err){
-            System.out.println(err);
+        } catch (FileNotFoundException err){
+            err.printStackTrace();
         }
         return doc;
     }
