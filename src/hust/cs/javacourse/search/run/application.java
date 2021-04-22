@@ -130,6 +130,11 @@ public class application {
 
     }
 
+
+    /**
+     * @desc  用来展示结果
+     * @param resHits
+     */
     public static void showRes(AbstractHit[] resHits) {
         if (resHits != null) {
             for (AbstractHit hit : resHits) {
@@ -142,6 +147,12 @@ public class application {
         }
     }
 
+
+    /**
+     * @desc  判断该term是否非法
+     * @param term
+     * @return  返回该term是否非法
+     */
     public static boolean isIllegalWord(AbstractTerm term) {
         ArrayList<String> stopWords = new ArrayList<>(Arrays.asList(StopWords.STOP_WORDS));
         return stopWords.contains(term.getContent())
