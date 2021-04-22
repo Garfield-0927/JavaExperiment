@@ -14,6 +14,8 @@ import java.io.*;
  *   </pre>
  */
 public class Term extends AbstractTerm implements Comparable<AbstractTerm>, FileSerializable {
+    private static final long serialVersionUID = 1624165710663133955L;
+
     /**
      * 缺省构造函数
      */
@@ -89,7 +91,7 @@ public class Term extends AbstractTerm implements Comparable<AbstractTerm>, File
     @Override
     public void writeObject(ObjectOutputStream out) {
         try {
-            out.writeUTF(this.content);
+            out.writeObject(this.content);
         } catch (IOException err) {
             err.printStackTrace();
         }
@@ -103,7 +105,11 @@ public class Term extends AbstractTerm implements Comparable<AbstractTerm>, File
     @Override
     public void readObject(ObjectInputStream in) {
         try {
-            this.content = in.readUTF();
+            try {
+                this.content = (String)in.readObject();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
         } catch (IOException err) {
             err.printStackTrace();
         }

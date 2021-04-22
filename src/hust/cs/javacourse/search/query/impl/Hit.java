@@ -70,7 +70,7 @@ public class Hit extends AbstractHit {
 
     @Override
     public int compareTo(AbstractHit o) {
-        double diff = -this.getScore() + o.getScore();
+        double diff = this.getScore() - o.getScore();
         if (diff != 0) {
             return (int) diff;
         } else {

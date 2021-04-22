@@ -28,7 +28,7 @@ public class IndexBuilder extends AbstractIndexBuilder {
     public AbstractIndex buildIndex(String rootDirectory) {
         AbstractIndex index = new Index();
         for (String path : FileUtil.list(rootDirectory)) {
-            AbstractDocument doc = this.docBuilder.build(++docId, path, new File(path));
+            AbstractDocument doc = this.docBuilder.build(docId++, path, new File(path));
             index.addDocument(doc);
         }
         index.save(new File(Config.INDEX_DIR+"index.dat"));

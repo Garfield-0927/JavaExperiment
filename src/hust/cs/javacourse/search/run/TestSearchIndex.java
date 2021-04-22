@@ -18,17 +18,17 @@ public class TestSearchIndex {
      * @param args ：命令行参数
      */
     public static void main(String[] args) {
-//        AbstractIndexSearcher searcher = new IndexSearcher();
-//        searcher.open(Config.INDEX_DIR + "index.dat");
-//        AbstractTerm queryTerm1 = new Term("death".toLowerCase());
-//        AbstractTerm queryTerm2 = new Term("toll".toLowerCase());
-//        AbstractHit[] hits = searcher.search(queryTerm1, new Sort());
-//        if (hits!=null){
-//            for (AbstractHit hit:hits
-//            ) {
-//                System.out.println(hit.getDocId()+":"+hit.getScore());
-//            }
-//        }
+        AbstractIndexSearcher searcher = new IndexSearcher();
+        searcher.open(Config.INDEX_DIR + "index.dat");
+        AbstractTerm queryTerm1 = new Term("death".toLowerCase());
+        AbstractTerm queryTerm2 = new Term("toll".toLowerCase());
+        AbstractHit[] hits = searcher.search(queryTerm1, new SimpleSorter());
+        if (hits!=null){
+            for (AbstractHit hit:hits
+            ) {
+                System.out.println(hit.getDocId()+":"+hit.getScore());
+            }
+        }
 
 //        AbstractHit[] hits = searcher.search(queryTerm1, queryTerm2, new SimpleSorter(), AbstractIndexSearcher.LogicalCombination.OR);
 //        System.out.println("======================================");

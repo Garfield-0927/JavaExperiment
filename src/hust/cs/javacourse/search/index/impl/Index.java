@@ -175,9 +175,7 @@ public class Index extends AbstractIndex implements FileSerializable {
         try {
             this.termToPostingListMapping = (Map<AbstractTerm, AbstractPostingList>) in.readObject();
             this.docIdToDocPathMapping = (Map<Integer, String>) in.readObject();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
