@@ -22,6 +22,10 @@ public class Document extends AbstractDocument {
     public Document() {
     }
 
+    public Document(int docId, String docPath, List<AbstractTermTuple> tuples) {
+        super(docId, docPath, tuples);
+    }
+
     /**
      * 构造函数
      *

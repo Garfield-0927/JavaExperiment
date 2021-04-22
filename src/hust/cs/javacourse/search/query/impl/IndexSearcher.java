@@ -15,7 +15,6 @@ import java.io.File;
 import java.lang.reflect.Array;
 import java.util.*;
 
-// TODO
 public class IndexSearcher extends AbstractIndexSearcher {
     public IndexSearcher() {
     }
@@ -42,11 +41,6 @@ public class IndexSearcher extends AbstractIndexSearcher {
                 hits[i].setScore(sorter.score(hits[i]));
                 termPostingMapping.clear();
             }
-            System.out.println("Before sort");
-            for (AbstractHit hit : hits) {
-                System.out.println(hit.getDocId() + ":" + hit.getScore());
-            }
-            System.out.println("After sort");
             sorter.sort(Arrays.asList(hits));
             return hits;
         } else {

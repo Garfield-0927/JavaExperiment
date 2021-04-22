@@ -40,4 +40,6 @@ public class StopWordTermTupleFilter extends AbstractTermTupleFilter {
         return stopWordFilter;
     }
 
+
+
 }

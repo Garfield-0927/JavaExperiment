@@ -22,25 +22,13 @@
     <list default="true" id="4213cc7e-886d-4d43-8cf7-3b6d0767e64d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/production/SearchEngineForStudent/hust/cs/javacourse/search/index/impl/Document.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/SearchEngineForStudent/hust/cs/javacourse/search/index/impl/Document.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/production/SearchEngineForStudent/hust/cs/javacourse/search/index/impl/DocumentBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/SearchEngineForStudent/hust/cs/javacourse/search/index/impl/DocumentBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/production/SearchEngineForStudent/hust/cs/javacourse/search/index/impl/IndexBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/SearchEngineForStudent/hust/cs/javacourse/search/index/impl/IndexBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/production/SearchEngineForStudent/hust/cs/javacourse/search/run/TestBuildIndex.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/SearchEngineForStudent/hust/cs/javacourse/search/run/TestBuildIndex.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/production/SearchEngineForStudent/hust/cs/javacourse/search/run/TestSearchIndex.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/SearchEngineForStudent/hust/cs/javacourse/search/run/TestSearchIndex.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/production/SearchEngineForStudent/hust/cs/javacourse/search/run/test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/production/SearchEngineForStudent/hust/cs/javacourse/search/util/FileUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/SearchEngineForStudent/hust/cs/javacourse/search/util/FileUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hust/cs/javacourse/search/index/AbstractDocumentBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/cs/javacourse/search/index/AbstractDocumentBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/SearchEngineForStudent/hust/cs/javacourse/search/index/impl/TermTuple.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/SearchEngineForStudent/hust/cs/javacourse/search/index/impl/TermTuple.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hust/cs/javacourse/search/index/impl/Document.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/cs/javacourse/search/index/impl/Document.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hust/cs/javacourse/search/index/impl/DocumentBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/cs/javacourse/search/index/impl/DocumentBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hust/cs/javacourse/search/index/impl/Index.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/cs/javacourse/search/index/impl/Index.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hust/cs/javacourse/search/index/impl/IndexBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/cs/javacourse/search/index/impl/IndexBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hust/cs/javacourse/search/index/impl/Posting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/cs/javacourse/search/index/impl/Posting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hust/cs/javacourse/search/index/impl/PostingList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/cs/javacourse/search/index/impl/PostingList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hust/cs/javacourse/search/index/impl/Term.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/cs/javacourse/search/index/impl/Term.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hust/cs/javacourse/search/index/impl/TermTuple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/cs/javacourse/search/index/impl/TermTuple.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hust/cs/javacourse/search/run/TestBuildIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/cs/javacourse/search/run/TestBuildIndex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hust/cs/javacourse/search/run/TestSearchIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/cs/javacourse/search/run/TestSearchIndex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hust/cs/javacourse/search/run/test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hust/cs/javacourse/search/util/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/cs/javacourse/search/util/FileUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hust/cs/javacourse/search/parse/impl/StopWordTermTupleFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/cs/javacourse/search/parse/impl/StopWordTermTupleFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hust/cs/javacourse/search/parse/impl/TermTupleScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/cs/javacourse/search/parse/impl/TermTupleScanner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hust/cs/javacourse/search/query/impl/IndexSearcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/cs/javacourse/search/query/impl/IndexSearcher.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +171,7 @@
       <workItem from="1618654919672" duration="11827000" />
       <workItem from="1618805647844" duration="1955000" />
       <workItem from="1618812352777" duration="14611000" />
-      <workItem from="1619090263960" duration="2079000" />
+      <workItem from="1619090263960" duration="4993000" />
     </task>
     <servers />
   </component>

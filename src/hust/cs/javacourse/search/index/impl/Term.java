@@ -36,7 +36,7 @@ public class Term extends AbstractTerm implements Comparable<AbstractTerm>, File
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof Term) {
-            return ((Term) obj).content == this.content;
+            return ((Term) obj).content.equals(this.content);
         }
         return false;
     }

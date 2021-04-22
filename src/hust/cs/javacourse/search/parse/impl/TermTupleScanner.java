@@ -15,7 +15,7 @@ import java.util.Locale;
 
 public class TermTupleScanner extends AbstractTermTupleScanner {
 
-    private int curPos = 1;
+    private int curPos = 0;
     private List<TermTuple> tuples = new ArrayList<TermTuple>();
 
     public List<TermTuple> getTerms() {

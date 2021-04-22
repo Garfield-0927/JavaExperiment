@@ -11,7 +11,7 @@ public class TermTuple extends AbstractTermTuple {
 
 
 
-    
+
 
     public TermTuple(Term term, int pos) {
         this.term = term;
@@ -21,9 +21,7 @@ public class TermTuple extends AbstractTermTuple {
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof  TermTuple){
-            return ((TermTuple) obj).freq == this.freq
-                    && ((TermTuple) obj).curPos == this.curPos
-                    && ((TermTuple) obj).term == this.term;
+            return ((TermTuple) obj).curPos == this.curPos && ((TermTuple) obj).term.getContent().equals(this.term.getContent());
         }
         return false;
     }
