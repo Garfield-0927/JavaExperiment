@@ -1,3 +1,7 @@
+/**
+ * author: garfield
+ * made on 2021/4/22
+ */
 package hust.cs.javacourse.search.run;
 
 import hust.cs.javacourse.search.index.AbstractDocumentBuilder;
