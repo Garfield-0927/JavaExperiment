@@ -3,6 +3,16 @@ package hust.cs.javacourse.search.index.impl;
 import hust.cs.javacourse.search.index.AbstractTermTuple;
 
 public class TermTuple extends AbstractTermTuple {
+    /**
+     * 缺省构造函数
+     */
+    public TermTuple() {
+    }
+
+
+
+    
+
     public TermTuple(Term term, int pos) {
         this.term = term;
         this.curPos = pos;

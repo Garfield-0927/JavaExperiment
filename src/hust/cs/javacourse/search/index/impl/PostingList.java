@@ -20,6 +20,12 @@ import java.util.List;
  */
 public class PostingList extends AbstractPostingList implements FileSerializable {
     /**
+     * 缺省构造函数
+     */
+    public PostingList() {
+    }
+
+    /**
      * 获得PosingList的字符串表示
      *
      * @return ： PosingList的字符串表示

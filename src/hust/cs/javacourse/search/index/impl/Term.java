@@ -14,7 +14,11 @@ import java.io.*;
  *   </pre>
  */
 public class Term extends AbstractTerm implements Comparable<AbstractTerm>, FileSerializable {
-
+    /**
+     * 缺省构造函数
+     */
+    public Term() {
+    }
 
     /**
      * 缺省构造函数

@@ -16,7 +16,8 @@ import java.util.*;
  * </pre>
  */
 public class Index extends AbstractIndex implements FileSerializable {
-
+    public Index() {
+    }
 
     /**
      * 返回索引的字符串表示
@@ -40,10 +41,10 @@ public class Index extends AbstractIndex implements FileSerializable {
     @Override
     public void addDocument(AbstractDocument document) {
         this.docIdToDocPathMapping.put(document.getDocId(), document.getDocPath());
-        Map<AbstractTerm, Posting> map = new TreeMap<AbstractTerm, Posting>();
+        Map<AbstractTerm, Posting> map = new TreeMap<>();
         for (AbstractTermTuple tuple : document.getTuples()) {
             if (!map.containsKey(tuple.term)) {
-                List<Integer> pos = new ArrayList<Integer>();
+                List<Integer> pos = new ArrayList<>();
                 pos.add(tuple.curPos);
                 Posting posting = new Posting(document.getDocId(), 1, pos);
                 map.put(tuple.term, posting);

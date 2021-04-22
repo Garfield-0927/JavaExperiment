@@ -19,6 +19,9 @@ import java.io.*;
  */
 public class DocumentBuilder extends AbstractDocumentBuilder {
 
+    public DocumentBuilder() {
+    }
+
     /**
      * <pre>
      * 由解析文本文档得到的TermTupleStream,构造Document对象.
@@ -32,12 +35,14 @@ public class DocumentBuilder extends AbstractDocumentBuilder {
     public AbstractDocument build(int docId, String docPath, AbstractTermTupleStream termTupleStream) {
         AbstractDocument doc = new Document(docId, docPath);
         AbstractTermTuple tup = termTupleStream.next();
-        while(tup!=null){
+        while (tup != null) {
             doc.addTuple(tup);
             tup = termTupleStream.next();
         }
+        termTupleStream.close();
         return doc;
     }
+
     /**
      * <pre>
      * 由给定的File,构造Document对象.
@@ -51,14 +56,13 @@ public class DocumentBuilder extends AbstractDocumentBuilder {
      */
     @Override
     public AbstractDocument build(int docId, String docPath, File file) {
-        AbstractDocument doc = null;
+        AbstractTermTupleStream stream = null;
         try {
             BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
-            AbstractTermTupleStream stream = new StopWordTermTupleFilter(new LengthTermTupleFilter(new PatternTermTupleFilter(new TermTupleScanner(reader))));
-            doc = this.build(docId, docPath, stream);
-        } catch (FileNotFoundException err){
+            stream = new StopWordTermTupleFilter(new LengthTermTupleFilter(new PatternTermTupleFilter(new TermTupleScanner(reader))));
+        } catch (FileNotFoundException err) {
             err.printStackTrace();
         }
-        return doc;
+        return this.build(docId, docPath, stream);
     }
 }

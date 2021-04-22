@@ -17,6 +17,12 @@ import java.util.List;
 public class Document extends AbstractDocument {
 
     /**
+     * 无参构造
+     */
+    public Document() {
+    }
+
+    /**
      * 构造函数
      *
      * @param docId：文档id
@@ -24,10 +30,6 @@ public class Document extends AbstractDocument {
      */
     public Document(int docId, String docPath) {
         super(docId, docPath);
-    }
-
-    public Document(int docId, String docPath, List<AbstractTermTuple> tuples) {
-        super(docId, docPath, tuples);
     }
 
     /**

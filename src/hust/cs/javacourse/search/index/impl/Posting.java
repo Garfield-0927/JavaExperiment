@@ -27,7 +27,7 @@ public class Posting extends AbstractPosting implements Comparable<AbstractPosti
     /**
      * 缺省构造函数
      */
-    public Posting() {
+    public Posting(){
 
     }
 
