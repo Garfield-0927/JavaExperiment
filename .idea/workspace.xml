@@ -21,11 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4213cc7e-886d-4d43-8cf7-3b6d0767e64d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/production/SearchEngineForStudent/hust/cs/javacourse/search/run/application.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/SearchEngineForStudent/hust/cs/javacourse/search/run/application.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hust/cs/javacourse/search/query/impl/IndexSearcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/cs/javacourse/search/query/impl/IndexSearcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hust/cs/javacourse/search/run/TestBuildIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/cs/javacourse/search/run/TestBuildIndex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hust/cs/javacourse/search/run/TestSearchIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/cs/javacourse/search/run/TestSearchIndex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hust/cs/javacourse/search/run/application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/cs/javacourse/search/run/application.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +76,7 @@
     <property name="project.structure.last.edited" value="项目" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -143,13 +139,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -188,7 +186,8 @@
       <workItem from="1618805647844" duration="1955000" />
       <workItem from="1618812352777" duration="14611000" />
       <workItem from="1619090263960" duration="8224000" />
-      <workItem from="1619102660174" duration="3641000" />
+      <workItem from="1619102660174" duration="3840000" />
+      <workItem from="1619137484765" duration="1514000" />
     </task>
     <servers />
   </component>
@@ -221,6 +220,15 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/hust/cs/javacourse/search/query/impl/IndexSearcher.java</url>
+          <line>75</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="hust.cs.javacourse.search.parse.impl.PatternFilter" memberName="input" />

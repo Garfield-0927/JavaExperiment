@@ -79,25 +79,25 @@ public class IndexSearcher extends AbstractIndexSearcher {
                         termPostingMapping.put(queryTerm1, posting);
                         hits.add(new Hit(posting.getDocId(), this.index.getDocName(posting.getDocId()), termPostingMapping));     // 这里传文件名即可，不然会找不到文件，详情参见fileUtil中的read方法
                         hits.get(i).setScore(sorter.score(hits.get(i)));
-
                         termPostingMapping.clear();
                     }
                 }
                 if (plist2 != null) {
                     for (int i = 0; i < plist2.size(); i++) {
-                        int[] flag = new int[1];
-                        flag[0] = 0;
+                        int flag = 0;
                         AbstractPosting posting = plist2.get(i);
-                        hits.forEach(item -> {
+                        for (int j = 0; j < hits.size(); j++) {
+                            AbstractHit item = hits.get(j);
                             if (item.getDocId() == posting.getDocId()) {
                                 item.getTermPostingMapping().put(queryTerm2, posting);
+                                item.setScore(sorter.score(item));
+                                flag = 1;
                             }
-                            flag[0] = 1;
-                        });
-                        if (flag[0] == 0) {
+                        }
+                        if (flag == 0) {
                             termPostingMapping.put(queryTerm2, posting);
                             hits.add(new Hit(posting.getDocId(), this.index.getDocName(posting.getDocId()), termPostingMapping));
-                            hits.get(i).setScore(sorter.score(hits.get(i)));
+                            hits.get(hits.size()-1).setScore(sorter.score(hits.get(hits.size()-1)));
                             termPostingMapping.clear();
                         }
                     }
