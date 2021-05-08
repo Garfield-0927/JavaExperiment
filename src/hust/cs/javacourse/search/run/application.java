@@ -55,9 +55,14 @@ public class application {
                     if (indexSearcher == null) {
                         System.out.println("Start load index...");
                         String indexFile = Config.INDEX_DIR + "index.dat";
-                        indexSearcher = new IndexSearcher();
-                        indexSearcher.open(indexFile);
-                        System.out.println("Index load finished!");
+                        File file = new File(indexFile);
+                        if (file.exists()) {
+                            indexSearcher = new IndexSearcher();
+                            indexSearcher.open(indexFile);
+                            System.out.println("Index load finished!");
+                        } else {
+                            System.out.println("Please build index and save it to file first!");
+                        }
                     } else {
                         System.out.println("Index already exists!");
                     }
@@ -132,14 +137,18 @@ public class application {
 
 
     /**
-     * @desc  用来展示结果
-     * @param resHits
+     * 用来展示结果
+     *
+     * @param resHits 命中的集合
      */
     public static void showRes(AbstractHit[] resHits) {
         if (resHits != null) {
             for (AbstractHit hit : resHits) {
                 System.out.println("======================================================Split Line======================================================");
-                System.out.println(hit.getContent());
+                System.out.println("docId: " + hit.getDocId());
+                System.out.println("docPath: " + hit.getDocPath());
+                System.out.println("docScore: " + hit.getScore());
+                System.out.println("docContent: " + hit.getContent());
             }
             System.out.println("======================================================Split Line======================================================");
         } else {
@@ -149,15 +158,16 @@ public class application {
 
 
     /**
-     * @desc  判断该term是否非法
-     * @param term
-     * @return  返回该term是否非法
+     * 判断该term是否非法
+     *
+     * @param term 输入的term
+     * @return 返回该term是否非法
      */
     public static boolean isIllegalWord(AbstractTerm term) {
         ArrayList<String> stopWords = new ArrayList<>(Arrays.asList(StopWords.STOP_WORDS));
         return stopWords.contains(term.getContent())
-                && term.getContent().length() > Config.TERM_FILTER_MAXLENGTH
-                && term.getContent().length() < Config.TERM_FILTER_MINLENGTH
-                && !term.getContent().matches(Config.TERM_FILTER_PATTERN);
+                || term.getContent().length() > Config.TERM_FILTER_MAXLENGTH
+                || term.getContent().length() < Config.TERM_FILTER_MINLENGTH
+                || !term.getContent().matches(Config.TERM_FILTER_PATTERN);
     }
 }

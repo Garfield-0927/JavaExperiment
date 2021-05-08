@@ -27,7 +27,7 @@ public class IndexSearcher extends AbstractIndexSearcher {
         try {
             this.index.load(new File(indexFile));
         } catch (Exception err) {
-            System.out.println(err);
+            err.printStackTrace();
         }
     }
     /**

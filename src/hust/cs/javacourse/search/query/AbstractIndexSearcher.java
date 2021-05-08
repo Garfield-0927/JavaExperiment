@@ -13,8 +13,6 @@ public abstract class AbstractIndexSearcher {
     /**
      * 内存中的索引，子类对象被初始化时为空
      */
-    //Index是AbstractIndex的具体实现类，在hust.cs.javacourse.search.index.impl里定义，但没有实现任何覆盖方法，需要学生实现
-    //如果学生AbstractIndex的具体实现类类名不是Index，这里需要相应修改
     protected AbstractIndex index = new Index();
     /**
      * 多个检索词的逻辑组合

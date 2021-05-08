@@ -24,7 +24,7 @@ public class TestSearchIndex {
     public static void main(String[] args) {
         AbstractIndexSearcher searcher = new IndexSearcher();
         searcher.open(Config.INDEX_DIR + "index.dat");
-        AbstractTerm queryTerm1 = new Term("death".toLowerCase());
+        AbstractTerm queryTerm1 = new Term("coronavirus".toLowerCase());
         AbstractTerm queryTerm2 = new Term("toll".toLowerCase());
         AbstractHit[] hits = searcher.search(queryTerm1, new SimpleSorter());
         if (hits!=null){

@@ -5,14 +5,11 @@
   <nodes />
   <notes />
   <edges />
-  <settings layout="Hierarchic Group" zoom="1.0" x="559.5" y="335.0" />
+  <settings layout="Hierarchic Group" zoom="1.2000000000000002" x="643.0909090909099" y="436.5454545454552" />
   <SelectedNodes />
   <Categories>
-    <Category>Fields</Category>
-    <Category>Constructors</Category>
-    <Category>Methods</Category>
-    <Category>Properties</Category>
-    <Category>Inner Classes</Category>
+    <Category>字段</Category>
+    <Category>构造函数</Category>
   </Categories>
   <SCOPE>Project Files</SCOPE>
   <VISIBILITY>private</VISIBILITY>
