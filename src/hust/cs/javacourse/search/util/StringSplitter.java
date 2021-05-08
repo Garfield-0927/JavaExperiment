@@ -9,6 +9,9 @@ import java.util.regex.Pattern;
  * 字符串分割类，根据标点符号和空白符将字符串分成一个个单词
  */
 public class StringSplitter {
+    /**
+     * 构造函数
+     */
     public StringSplitter(){}
     private  String splitRegex = null;
     private  Pattern pattern = null;

@@ -8,7 +8,11 @@ import hust.cs.javacourse.search.util.StopWords;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
+/**
+ * <pre>
+ *     StopWordTermTupleFilter过滤停顿词
+ * </pre>
+ */
 public class StopWordTermTupleFilter extends AbstractTermTupleFilter {
 
     private List<String> stopWord;

@@ -9,6 +9,11 @@ import hust.cs.javacourse.search.util.FileUtil;
 
 import java.io.File;
 
+/**
+ * <pre>
+ * IndexBuilder完成索引构造的工作
+ * </pre>
+ */
 public class IndexBuilder extends AbstractIndexBuilder {
 
 

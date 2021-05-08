@@ -8,6 +8,9 @@ import java.util.List;
  * 文件操作的工具类
  */
 public class FileUtil {
+    /**
+     * 构造函数
+     */
     private FileUtil(){}
 
     /**
@@ -114,6 +117,10 @@ public class FileUtil {
         return filePaths;
     }
 
+    /**
+     * 测试函数
+     * @param args 命令行参数
+     */
     public static void main(String[] args){
         //从文件读
         String fileName = Config.DOC_DIR + "1.txt";

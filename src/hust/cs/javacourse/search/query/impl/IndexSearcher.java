@@ -14,8 +14,15 @@ import hust.cs.javacourse.search.util.Config;
 import java.io.File;
 import java.lang.reflect.Array;
 import java.util.*;
-
+/**
+ * <pre>
+ *  IndexSearcher实现了对Index进行搜索的功能呢
+ * </pre>
+ */
 public class IndexSearcher extends AbstractIndexSearcher {
+    /**
+     * 默认构造函数
+     */
     public IndexSearcher() {
     }
     /**

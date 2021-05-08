@@ -21,7 +21,10 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class application {
-
+    /**
+     * 搜索引擎主程序
+     * @param args 命令行参数
+     */
     public static void main(String[] args) {
         AbstractIndexBuilder indexBuilder = null;
         AbstractIndexSearcher indexSearcher = null;
